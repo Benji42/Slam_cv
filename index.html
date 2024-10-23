@@ -3,99 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - RICHARD Benjamin</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1d7584;
-        }
-        .container {
-            width: 60%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-            border-bottom: 2px solid #666;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            padding: 5px 0;
-        }
-        .category {
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>CV Benjamin</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1292a2;
+    color: #333;
+}
+
+header {
+    background: #527184;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initial position for animation */
+    animation: fadeIn 0.5s forwards; /* Animation on load */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #35424a;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #35424a;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+ul li img {
+    margin-right: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+</style>
 <body>
-
-    <div class="container">
-        <h1>RICHARD Benjamin</h1>
-            <p>Étudiant en bts sio</p>
-        <div class="category">
+    <header>
+        <h1>CV de Benjamin RICHARD</h1>
+    </header>
+    <main>
+        <section id="profil">
             <h2>Profil</h2>
-            <p>Suite à mon admission auprès du Pôle de formation UIMM-CFAI Loire Drôme Ardèche, je suis à la recherche d'une alternance pour la rentrée 2024 dans le cadre d'un BTS SIO</p>
-</div>
-
-        <div class="category">
-            <h2>Savoir-être</h2>
-            <ul>
-                <li>Adaptabilité</li>
-                <li>Disponibilité</li>
-                <li>Esprit d'équipe</li>
-                <li>Gestion du stress</li>
-            </ul>
-        </div>
-
-        <div class="category">
+            <p>Professionnel dynamique avec un goût pour l'innovation et le travail en équipe.</p>
+        </section>
+        
+        <section id="cordonnees">
             <h2>Coordonnées</h2>
             <ul>
-                <li>Email : benjarich420@gmail.com</li>
-                <li>Téléphone : 07 68 14 51 63</li>
-                <li>Adresse : 16 rue des fortifications, 42560 Marols, France</li>
-                <li>Age: 20 ans</li>
-                <li>Permis: B</li>
+                <li><img src="https://img.icons8.com/ios-filled/24/000000/email.png"/> Email : exemple@mail.com</li>
+                <li><img src="https://img.icons8.com/ios-filled/24/000000/phone.png"/> Téléphone : 0123456789</li>
+                <li><img src="https://img.icons8.com/ios-filled/24/000000/home.png"/> Adresse : 123 Rue Exemple, Ville, Pays</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="category">
-            <h2>Savoir-être extra-professionnel</h2>
+        <section id="savoir-etre">
+            <h2>Savoir-être</h2>
             <ul>
-                <p>Aide à distance avec des partages d'écrans pour des télécharments ou des configurations de logiciels<p>
+                <li>Esprit d'équipe</li>
+                <li>Adaptabilité</li>
+                <li>Communication</li>
+                <li>Proactivité</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="category">
-            <h2>Expérience</h2>
+        <section id="savoir-faire">
+            <h2>Savoir-faire extra professionnel</h2>
             <ul>
-                <li><strong>Intérim:</strong> Manutention</li>
+                <li>Gestion de projet</li>
+                <li>Développement web</li>
+                <li>Création de contenu</li>
+                <li>Analyse de données</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="category">
+        <section id="formation">
             <h2>Formation</h2>
             <ul>
-                <li><strong>[Diplôme]</strong> - Université/École Z (Année d'obtention)</li>
-                <p>Spécialisation en [Détails pertinents]</p>
+                <li>Bachelor en Informatique - Université Exemple (2019)</li>
+                <li>Master en Gestion de Projet - Université Exemple (2021)</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="category">
-            <h2>Centres d'intérêt</h2>
+        <section id="centres-interets">
+            <h2>Centres d'intérêts</h2>
             <ul>
-                <li>Jeux vidéos</li>
+                <li>Voyages</li>
+                <li>Technologie</li>
                 <li>Sport</li>
+                <li>Musique</li>
             </ul>
-        </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Nom</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        // Add a delay for each section to create a staggered animation effect
+        section.style.animationDelay = `${index * 0.1}s`;
+    });
 
-    </div>
+    // Adding interactivity to toggle section details on click
+    sections.forEach(section => {
+        section.addEventListener('click', () => {
+            section.classList.toggle('active');
+            section.classList.contains('active') 
+                ? section.style.maxHeight = section.scrollHeight + 'px' 
+                : section.style.maxHeight = '0';
+        });
+    });
+});
+
+    </script>
 </body>
 </html>
+
