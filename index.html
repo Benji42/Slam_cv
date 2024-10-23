@@ -3,179 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Benjamin</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Mon CV Interactif</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0;
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(0, 123, 255, 0.2);
+            color: #0056b3;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            border: 2px solid #007bff;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .contact-info div {
+            margin: 10px 0;
+            flex: 1;
+            text-align: center;
+        }
+
+        #theme-toggle {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.136);
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1292a2;
-    color: #333;
-}
-
-header {
-    background: #527184;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-p {
-    font-size: 1.2rem;
-}
-
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-section {
-    margin: 20px 0;
-    padding: 15px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(20px); /* Initial position for animation */
-    animation: fadeIn 0.5s forwards; /* Animation on load */
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-section:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    color: #35424a;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #35424a;
-    padding-bottom: 5px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
-ul li img {
-    margin-right: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
-}
-
-</style>
 <body>
     <header>
-        <h1>CV de Benjamin RICHARD</h1>
+        <h1>Mon CV</h1>
+        <nav>
+            <a href="#profil">Profil</a>
+            <a href="#coordonnees">Coordonnées</a>
+            <a href="#savoir-etre">Savoir-être</a>
+            <a href="#savoir-faire">Savoir-faire</a>
+            <a href="#formation">Formation</a>
+            <a href="#centres-interets">Centres d'intérêts</a>
+        </nav>
+        <button id="theme-toggle">Changer de Thème</button>
     </header>
-    <main>
+
+    <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Photo de profil" class="profile-img">
+
         <section id="profil">
             <h2>Profil</h2>
-            <p>Professionnel dynamique avec un goût pour l'innovation et le travail en équipe.</p>
+            <p>Je suis un professionnel passionné avec une solide expérience dans mon domaine, toujours prêt à relever de nouveaux défis et à apprendre.</p>
         </section>
-        
-        <section id="cordonnees">
+
+        <section id="coordonnees">
             <h2>Coordonnées</h2>
-            <ul>
-                <li><img src="https://img.icons8.com/ios-filled/24/000000/email.png"/> Email : exemple@mail.com</li>
-                <li><img src="https://img.icons8.com/ios-filled/24/000000/phone.png"/> Téléphone : 0123456789</li>
-                <li><img src="https://img.icons8.com/ios-filled/24/000000/home.png"/> Adresse : 123 Rue Exemple, Ville, Pays</li>
-            </ul>
+            <div class="contact-info">
+                <div><span class="icon">✉️</span>Email: <a href="mailto:monemail@example.com">monemail@example.com</a></div>
+                <div><span class="icon">📞</span>Téléphone: <a href="tel:+0123456789">0123456789</a></div>
+                <div><span class="icon">📍</span>Adresse: 123 Rue Exemple, Ville, Pays</div>
+            </div>
         </section>
 
         <section id="savoir-etre">
             <h2>Savoir-être</h2>
-            <ul>
-                <li>Esprit d'équipe</li>
-                <li>Adaptabilité</li>
-                <li>Communication</li>
-                <li>Proactivité</li>
-            </ul>
+            <p>Je suis dynamique, à l'écoute, et j'aime travailler en équipe. Mon adaptabilité et ma capacité à gérer le stress sont des atouts majeurs dans mon travail.</p>
         </section>
 
         <section id="savoir-faire">
-            <h2>Savoir-faire extra professionnel</h2>
-            <ul>
-                <li>Gestion de projet</li>
-                <li>Développement web</li>
-                <li>Création de contenu</li>
-                <li>Analyse de données</li>
-            </ul>
+            <h2>Savoir-faire Extra Professionnel</h2>
+            <p>Compétences : Gestion de projet, Communication, Leadership, et Compétences en informatique.</p>
         </section>
 
         <section id="formation">
             <h2>Formation</h2>
-            <ul>
-                <li>Bachelor en Informatique - Université Exemple (2019)</li>
-                <li>Master en Gestion de Projet - Université Exemple (2021)</li>
-            </ul>
+            <p>Diplôme : Licence en Informatique, Université de Exemple, Année d'obtention : 2020.</p>
         </section>
 
         <section id="centres-interets">
             <h2>Centres d'intérêts</h2>
-            <ul>
-                <li>Voyages</li>
-                <li>Technologie</li>
-                <li>Sport</li>
-                <li>Musique</li>
-            </ul>
+            <p>Je m'intéresse à la technologie, à la lecture, au sport et aux voyages. J'aime découvrir de nouvelles cultures et apprendre de nouvelles langues.</p>
         </section>
-    </main>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Mon Nom</p>
+        <p>&copy; 2024 Mon Nom. Tous droits réservés.</p>
     </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        // Add a delay for each section to create a staggered animation effect
-        section.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Adding interactivity to toggle section details on click
-    sections.forEach(section => {
-        section.addEventListener('click', () => {
-            section.classList.toggle('active');
-            section.classList.contains('active') 
-                ? section.style.maxHeight = section.scrollHeight + 'px' 
-                : section.style.maxHeight = '0';
+        // Fonction de défilement lisse
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-});
 
+        // Animation d'apparition des sections
+        const sections = document.querySelectorAll('section');
+        const options = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Changement de thème
+        const themeToggleButton = document.getElementById('theme-toggle');
+        let darkMode = false;
+
+        themeToggleButton.addEventListener('click', () => {
+            darkMode = !darkMode;
+            document.body.style.backgroundColor = darkMode ? '#333' : '#f9f9f9';
+            document.body.style.color = darkMode ? '#f9f9f9' : '#333';
+            header.style.backgroundColor = darkMode ? '#555' : '#007bff';
+            footer.style.backgroundColor = darkMode ? '#555' : '#007bff';
+            nav.querySelectorAll('a').forEach(link => {
+                link.style.color = darkMode ? '#f9f9f9' : '#007bff';
+            });
+            themeToggleButton.style.borderColor = darkMode ? '#f9f9f9' : '#007bff';
+            // Amélioration des icônes pour le thème sombre
+            document.querySelectorAll('.icon').forEach(icon => {
+                icon.style.color = darkMode ? '#f9f9f9' : '#333';
+            });
+        });
     </script>
 </body>
 </html>
-
