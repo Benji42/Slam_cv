@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV Interactif</title>
+    <title>CV Benjamin</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -121,19 +121,6 @@
             text-align: center;
         }
 
-        #theme-toggle {
-            background: none;
-            border: 2px solid #fff;
-            color: #fff;
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        #theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.136);
-        }
-
         .icon {
             font-size: 20px;
             margin-right: 8px;
@@ -162,11 +149,10 @@
             <a href="#formation">Formation</a>
             <a href="#centres-interets">Centres d'intérêts</a>
         </nav>
-        <button id="theme-toggle">Changer de Thème</button>
     </header>
 
     <div class="container">
-        <img src="https://via.placeholder.com/150" alt="Photo de profil" class="profile-img">
+        <img src="file:///C:/Users/benja/Downloads/d04993f6-c9a4-4de1-ac50-75427656b15b.jpg" alt="Photo de profil" class="profile-img">
 
         <section id="profil">
             <h2>Profil</h2>
@@ -189,12 +175,12 @@
 
         <section id="savoir-faire">
             <h2>Savoir-faire Extra Professionnel</h2>
-            <p>Compétences : Gestion de projet, Communication, Leadership, et Compétences en informatique.</p>
+            <p>Compétences : Compétences en informatique.</p>
         </section>
 
         <section id="formation">
             <h2>Formation</h2>
-            <p>Diplôme : Licence en Informatique, Université de Exemple, Année d'obtention : 2020.</p>
+            <p>Diplôme : BTS SIO SISR.</p>
         </section>
 
         <section id="centres-interets">
@@ -202,10 +188,6 @@
             <p>Je m'intéresse à la technologie, à la lecture, au sport et aux voyages. J'aime découvrir de nouvelles cultures et apprendre de nouvelles langues.</p>
         </section>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Mon Nom. Tous droits réservés.</p>
-    </footer>
 
     <script>
         // Fonction de défilement lisse
@@ -237,26 +219,6 @@
 
         sections.forEach(section => {
             observer.observe(section);
-        });
-
-        // Changement de thème
-        const themeToggleButton = document.getElementById('theme-toggle');
-        let darkMode = false;
-
-        themeToggleButton.addEventListener('click', () => {
-            darkMode = !darkMode;
-            document.body.style.backgroundColor = darkMode ? '#333' : '#f9f9f9';
-            document.body.style.color = darkMode ? '#f9f9f9' : '#333';
-            header.style.backgroundColor = darkMode ? '#555' : '#007bff';
-            footer.style.backgroundColor = darkMode ? '#555' : '#007bff';
-            nav.querySelectorAll('a').forEach(link => {
-                link.style.color = darkMode ? '#f9f9f9' : '#007bff';
-            });
-            themeToggleButton.style.borderColor = darkMode ? '#f9f9f9' : '#007bff';
-            // Amélioration des icônes pour le thème sombre
-            document.querySelectorAll('.icon').forEach(icon => {
-                icon.style.color = darkMode ? '#f9f9f9' : '#333';
-            });
         });
     </script>
 </body>
